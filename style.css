@@ -1,0 +1,62 @@
+/*Variable*/
+:root {
+  --main-border-radius: 50%;
+  --main-color: #ccc;
+  --color-one: #060047;
+  --color-two: #033803;
+  --color-three: #315103;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--main-color);
+}
+
+.dotted-loading {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 220px auto;
+  border-radius: var(--main-border-radius);
+  border-style: dotted dotted solid solid;
+  border-width: 4px;
+  border-color: var(--color-one);
+  animation: turnit 3s linear infinite;
+}
+
+.dotted-loading::before {
+  position: absolute;
+  content: "";
+  width: 60px;
+  height: 60px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-style: solid dotted solid dotted;
+  border-width: 4px;
+  border-color: var(--color-three);
+  border-radius: var(--main-border-radius);
+}
+
+.dotted-loading::after {
+  position: absolute;
+  content: "";
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-two);
+  border-radius: var(--main-border-radius);
+}
+
+/*Animation*/
+@keyframes turnit {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
